@@ -185,9 +185,7 @@ if __name__ == "__main__":
     x_test = x_test.reshape((x_test.shape[0],) + original_img_size)
     print('x_train.shape:', x_train.shape)
 
-    vae.load('/home/florian/phd/rlws/vae/')
-    #vae.train(x_train, x_test, y_test)
-    #vae.save('/home/florian/phd/rlws/vae/')
+    vae.train(x_train, x_test, y_test)
     
     # display a 2D plot of the digit classes in the latent space
     x_test_encoded = vae.encoder.predict(x_test, batch_size=batch_size)
